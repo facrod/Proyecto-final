@@ -1,9 +1,7 @@
 import React from 'react'
 
-const Categoria = () => {
+export const Categoria = () => {
   return (
     <div>Categoria</div>
   )
 }
-
-export default Categoria
