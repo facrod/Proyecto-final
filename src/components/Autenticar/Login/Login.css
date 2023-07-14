@@ -1,0 +1,29 @@
+p{
+    opacity: 60%;
+    margin-left: 2px;
+    font-size: 0.8rem;
+}
+.recuperar {
+    color: blue;
+    opacity: 70%;
+    transition: 2s ease;
+}
+.recuperar:hover {
+    transition: 1s ease;
+    color: darkblue;
+    opacity: 100%;
+    transform: scale(1,1);
+    transform: scale(1.01,1.01);
+}
+
+.registrate {
+    color: rgb(161, 60, 161);
+    opacity: 70%;
+    transition: 2s ease;
+}
+.registrate:hover{
+    color: rgb(89, 1, 128);
+    opacity: 100%;
+    transform: scale(1.01,1.01);
+}
+

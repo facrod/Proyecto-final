@@ -3,14 +3,53 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Form from 'react-bootstrap/Form';
-import Nav from 'react-bootstrap/Nav';
+import { Register } from '../Register/Register';
+import { NavLink } from "react-router-dom";
+import { login } from '../../../services/api';
+import "./login.css"
 
-export const Login = ({children}) => {
+
+export const Login = () => {
   const [show, setShow] = useState(false);
   const [register, setRegister] = useState(false)
-  const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const handleClose = () => {
+    setShow(false)
+    setRegister(false)
+  }
 
+  const [usuario, setUsuario] = useState({
+    email : "",
+    password : "",
+  })
+
+  function handleEmail(e) {
+    setUsuario({
+      ...usuario,
+      email: e.target.value
+    })
+  }
+
+  function handlePassword (e) {
+    setUsuario({
+      ...usuario,
+      password: e.target.value
+    })
+  }
+  
+  function handleClick() {
+  login(usuario)
+    .then(res =>{
+      console.log(res)
+    })
+    .catch(err => console.log(err))    
+  setShow(false)
+  }
+
+
+  function changeRegister () {
+    setRegister(false)
+  }
   return (
     <>
       <Button variant="primary" onClick={handleShow}>
@@ -19,7 +58,7 @@ export const Login = ({children}) => {
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Ingresar</Modal.Title>
+          <Modal.Title>{register == false ? "Ingresar": "Crea tu cuenta"}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
          {
@@ -29,27 +68,26 @@ export const Login = ({children}) => {
           label="Email address"
           className="mb-3"
           >
-            <Form.Control type="email" placeholder="name@example.com" />
+            <Form.Control type="email" placeholder="Email" />
           </FloatingLabel>
-          <FloatingLabel controlId="floatingPassword" label="Password">
-            <Form.Control type="password" placeholder="Password" />
+          <FloatingLabel controlId="floatingPassword" label="Password" onChange={handleEmail}>
+            <Form.Control type="password" placeholder="Password" onChange={handlePassword} />
+            <p>Nunca compartiremos tu contaseña con nadie.</p>
           </FloatingLabel>  
-            <Nav.Link href="#link">
-              <Button variant="outline-danger" className='my-2' size="sm">
+            <NavLink to="../pages/RecuperarContraseña">
+              <Button variant="none" className='my-2 recuperar' size="sm">
                 Recuperar contraseña
               </Button>
-            </Nav.Link>
-            <Nav.Link>
-              <Button size="sm" onClick={()=>setRegister(true)}>
+            </NavLink>
+              <Button size="sm" variant="none" className='registrate' onClick={()=>setRegister(true)}>
                 Registrate
               </Button>
-            </Nav.Link>
 
-          </div>: <div>{children}</div>
+          </div>: <Register changeSetRegister={changeRegister}/>
          }
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="primary" onClick={handleClose}>
+          <Button variant="primary" onClick={handleClick} style={register == true ? {display : "none"} : {display : "flex"} }>
             Ingresar
           </Button>
         </Modal.Footer>

@@ -1,3 +1,14 @@
 .contenedorRegister {
-    transition: 2s ease;
+    animation-name: register !important;
+}
+@keyframes register {
+ 0%{
+    opacity: 0;
+ }
+ 50%{
+    opacity: 505;
+ }
+ 100%{
+    opacity: 100%;
+ }
 }

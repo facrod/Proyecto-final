@@ -1,12 +1,19 @@
 import { Login } from "./components/Autenticar/Login/Login"
-import { Register } from "./components/Autenticar/Register/Register"
-function App() {
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { RecuperarContraseña } from "./pages/RecuperarContraseña";
 
+
+
+function App() {
   return (
-    <>    
-      <Login>
-        <Register/>
-      </Login>
+    <>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Login/>}/>
+        <Route path="/pages/RecuperarContraseña" element={<RecuperarContraseña/>}/>
+
+      </Routes>
+    </BrowserRouter>
     </>
   )
 }
