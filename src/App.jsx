@@ -11,7 +11,6 @@ function App() {
       <Routes>
         <Route path="/" element={<Login/>}/>
         <Route path="/pages/RecuperarContraseña" element={<RecuperarContraseña/>}/>
-
       </Routes>
     </BrowserRouter>
     </>

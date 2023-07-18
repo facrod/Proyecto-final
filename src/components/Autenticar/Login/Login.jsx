@@ -5,7 +5,7 @@ import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Form from 'react-bootstrap/Form';
 import { Register } from '../Register/Register';
 import { NavLink } from "react-router-dom";
-import { login } from '../../../services/api';
+import { login } from '../../../services/autenticarServices';
 import "./login.css"
 
 
@@ -36,15 +36,23 @@ export const Login = () => {
       password: e.target.value
     })
   }
-  
-  function handleClick() {
+
+  const [loginRes, setLoginRes] = useState({})
+
+function handleClick() {
   login(usuario)
     .then(res =>{
+      setLoginRes(res)
       console.log(res)
     })
-    .catch(err => console.log(err))    
-  setShow(false)
-  }
+    .catch(err => console.log(err)) 
+
+    const headers = new Headers()
+    const {data} = loginRes || {}
+    headers.append("authorization", `Bearer ${data}`)
+    
+    setShow(false)
+}
 
 
   function changeRegister () {
@@ -68,9 +76,9 @@ export const Login = () => {
           label="Email address"
           className="mb-3"
           >
-            <Form.Control type="email" placeholder="Email" />
+            <Form.Control type="email" placeholder="Email" onChange={handleEmail}/>
           </FloatingLabel>
-          <FloatingLabel controlId="floatingPassword" label="Password" onChange={handleEmail}>
+          <FloatingLabel controlId="floatingPassword" label="Password" >
             <Form.Control type="password" placeholder="Password" onChange={handlePassword} />
             <p>Nunca compartiremos tu contaseña con nadie.</p>
           </FloatingLabel>  

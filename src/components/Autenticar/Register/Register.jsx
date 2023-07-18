@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import React from 'react'
 import Form from 'react-bootstrap/Form';
 import "./Register.css"
-import { addUser } from '../../../services/api';
+import { addUser } from '../../../services/autenticarServices';
 
 export const Register = ({changeSetRegister}) => {
 
@@ -49,7 +49,7 @@ function handleRePassword(e) {
 
 
 const handeClick = (e) => {
-  if (usuarioNuevo.nombre == "" && usuarioNuevo.apellido == "" && usuarioNuevo.email == "" && usuarioNuevo.password == "" && usuarioNuevo.repassword == "") {
+  if (usuarioNuevo.nombre === "" || usuarioNuevo.apellido === "" || usuarioNuevo.email === "" || usuarioNuevo.password === "" || usuarioNuevo.repassword === "") {
     alert("rellena los campos")
   } else {
     e.preventDefault()
@@ -65,7 +65,6 @@ const handeClick = (e) => {
       alert("las contraseñas deben coincidir")
     }   
   }
-
 }
 
   return (
