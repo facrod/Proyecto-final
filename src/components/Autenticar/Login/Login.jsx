@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState, useContext } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
@@ -7,9 +7,11 @@ import { Register } from '../Register/Register';
 import { NavLink } from "react-router-dom";
 import { login } from '../../../services/autenticarServices';
 import "./login.css"
+import { DataProvider } from '../../../context/DataContext';
 
 
 export const Login = () => {
+  const contexto = useContext(DataProvider)
   const [show, setShow] = useState(false);
   const [register, setRegister] = useState(false)
   const handleShow = () => setShow(true);
@@ -39,25 +41,29 @@ export const Login = () => {
 
   const [loginRes, setLoginRes] = useState({})
 
-function handleClick() {
-  login(usuario)
-    .then(res =>{
-      setLoginRes(res)
-      console.log(res)
-    })
-    .catch(err => console.log(err)) 
+  function handleClick() {
+    login(usuario)
+      .then(res =>{
+        setLoginRes(res)
+        console.log(res)
+      })
+      .catch(err => console.log(err)) 
 
-    const headers = new Headers()
-    const {data} = loginRes || {}
-    headers.append("authorization", `Bearer ${data}`)
+      const headers = new Headers()
+      const {data} = loginRes || {}
+      headers.append("authorization", `Bearer ${data}`)
     
+    contexto.setIsLogged(true)
     setShow(false)
-}
+  }
 
 
   function changeRegister () {
-    setRegister(false)
+      setRegister(false)
   }
+
+  console.log(contexto)
+
   return (
     <>
       <Button variant="primary" onClick={handleShow}>

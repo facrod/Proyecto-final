@@ -1,0 +1,51 @@
+.icono {
+    width: 12rem;
+    height: 10rem;
+}
+.contenedor div {
+    width: 25rem;
+}
+.contenedor {
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.contenedorLinks {
+    display: flex;
+    justify-content: space-between;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+}
+
+.link {
+    color: black;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: 1.5s;
+    opacity: 60%;
+}
+.link:hover {
+    transition: 1.2s ease;
+    transform: scale(1.02, 1.02);
+    opacity: 100%;
+}
+
+.contactos a,
+p {
+    font-size: 1rem;
+    color: black;
+    text-decoration: none;
+    opacity: 100%;
+    margin: 10px 0 10px 0;
+}
+
+.pagos img {
+    width: 4rem;
+    height: 2.5rem;
+    margin: 3px;
+}

@@ -2,6 +2,6 @@ import React from 'react'
 
 export const Destacados = () => {
   return (
-    <div>Destacados</div>
+    <div><h1>Destacados</h1></div>
   )
 }
