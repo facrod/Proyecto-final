@@ -1,0 +1,30 @@
+.navbar {
+  color: #fff !important;
+  background-color: #082032 !important;
+  margin: 0 !important;
+  padding: 0% !important;
+
+}
+.navbar-brand{
+  color: #fff !important;
+ }
+ #basic-nav-dropdown{
+   color: #fff !important;
+ }
+ 
+ #bs-navbar-active-color{
+   color: hsl(0, 0%, 100%) !important;
+ }
+ 
+ .navbar-toggler-icon
+ {
+   background-color: #ffffff77 !important ;
+   border-radius: 25% !important;
+ }
+ .navbar-toggler{
+   border: none !important;
+   color: #ffffffbb !important;
+ }
+ .nav-link{
+   color: white;
+ }
