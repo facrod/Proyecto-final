@@ -55,12 +55,15 @@ const handeClick = (e) => {
     e.preventDefault()
     e.stopPropagation()
     if (usuarioNuevo.password == usuarioNuevo.repassword) {
-      addUser(usuarioNuevo)
-      .then(res =>{
-        console.log(res)
-      })
-      .catch(err => console.log(err))    
-      changeSetRegister(false)
+      setTimeout(() => {
+        addUser(usuarioNuevo)
+        .then(res =>{
+          console.log(res)
+        })
+        .catch(err => console.log(err))    
+        changeSetRegister(false)
+        alert("registrado con exito!")
+      }, 2000);
     } else {
       alert("las contraseñas deben coincidir")
     }   
