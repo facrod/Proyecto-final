@@ -3,10 +3,10 @@
     display: grid;
     place-content: center;
 }
-input {
+.recInp {
     width: 50vw;
     height: 1rem;
 }
-button {
+.recBoton {
     width: 15vw;
 }
