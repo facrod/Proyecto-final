@@ -62,7 +62,6 @@ export const Login = () => {
       setRegister(false)
   }
 
-  console.log(contexto)
 
   return (
     <>
@@ -89,7 +88,7 @@ export const Login = () => {
             <p>Nunca compartiremos tu contaseña con nadie.</p>
           </FloatingLabel>  
             <NavLink to="/RecuperarContraseña">
-              <Button variant="none" className='my-2 recuperar' size="sm">
+              <Button variant="none" className='my-2 recuperar' size="sm" onClick={handleClose}>
                 Recuperar contraseña
               </Button>
             </NavLink>

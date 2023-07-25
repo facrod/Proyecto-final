@@ -1,10 +1,14 @@
 .header {
+    background-color: #082032;
+}
+.headerImg {
     width: 12rem;
     height: 10rem;
 }
-
-
 img {
-    height: 3.5rem;
-    width: 3.8rem;
+    height: 3rem;
+    width: 3rem;
+}
+input {
+    padding: 1rem;
 }

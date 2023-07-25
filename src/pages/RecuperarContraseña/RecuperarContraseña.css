@@ -1,0 +1,12 @@
+.recContraseña {
+    height: 100vh;
+    display: grid;
+    place-content: center;
+}
+input {
+    width: 50vw;
+    height: 1rem;
+}
+button {
+    width: 15vw;
+}

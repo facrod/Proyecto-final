@@ -1,6 +1,6 @@
 import { Login } from "./components/Autenticar/Login/Login"
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { RecuperarContraseña } from "./pages/RecuperarContraseña";
+import { RecuperarContraseña } from "./pages/RecuperarContraseña/RecuperarContraseña";
 import { Footer } from "./components/Footer/Footer";
 import { DataContext } from "./context/DataContext";
 import { Header } from "./components/Header/Header";
@@ -9,7 +9,10 @@ import { Carrito } from "./pages/Carrito";
 import { Contacto } from "./pages/Contacto";
 import { Destacados } from "./pages/Destacados";
 import { Favoritos } from "./pages/Favoritos";
-
+import NavComp from "./components/Nav/NavComp";
+import Productos from "./components/Productos/Productos";
+import Carrousel from "./components/Carrousel/Carrousel";
+import { Inicio } from "./pages/Inicio";
 
 function App() {
   return (
@@ -17,8 +20,13 @@ function App() {
     <DataContext>
       <BrowserRouter>
         <Header/>
+        <NavComp>
+          <Login/>
+        </NavComp>
         <Routes>
-          <Route path="/" element={<Login/>}/>
+          <Route path="/" element={<Inicio/>}/>
+          <Route path="/Productos" element={<Productos/>}/>
+          <Route path="/Contacto" element={<Contacto/>}/>
           <Route path="/RecuperarContraseña" element={<RecuperarContraseña/>}/>
           <Route path="/Carrito" element={<Carrito/>}></Route>
           <Route path="/Ayuda" element={<Ayuda/>}></Route>
