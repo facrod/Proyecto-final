@@ -22,21 +22,21 @@ export const Footer = () => {
           <NavLink to="/" className="link">
             Home
           </NavLink> 
-          <NavLink to="../pages/Destacados" className="link">
+          <NavLink to="/Destacados" className="link">
             destacados
           </NavLink>
-          <NavLink to="../pages/Contacto" className="link">
+          <NavLink to="/Contacto" className="link">
             Contacto
           </NavLink>
         </div> 
         <div className='links'> 
-          <NavLink to="../pages/Favoritos" className="link">
+          <NavLink to="/Favoritos" className="link">
             Favoritos
           </NavLink>
-          <NavLink to="../pages/Carrito" className="link">
+          <NavLink to="/Carrito" className="link">
             Carrito
           </NavLink>
-          <NavLink to="../pages/Ayuda" className="link">
+          <NavLink to="/Ayuda" className="link">
             Ayuda
           </NavLink>
         </div>
@@ -56,10 +56,10 @@ export const Footer = () => {
         </div>
         <div className='d-flex flex-column mx-2 text-center'>
           <h5>Redes sociales</h5>
-          <a href="http://">
+          <a href="http://www.facebook.com" target="_blank">
             <img src={facebooklogo} alt="Facebook" />
           </a>
-          <a href="http://">
+          <a href="http://www.twitter.com" target="_blank">
             <img src={twitterlogo} alt="Twitter" />
           </a>
         </div>

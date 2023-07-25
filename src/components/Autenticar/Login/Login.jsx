@@ -88,7 +88,7 @@ export const Login = () => {
             <Form.Control type="password" placeholder="Password" onChange={handlePassword} />
             <p>Nunca compartiremos tu contaseña con nadie.</p>
           </FloatingLabel>  
-            <NavLink to="../pages/RecuperarContraseña">
+            <NavLink to="/RecuperarContraseña">
               <Button variant="none" className='my-2 recuperar' size="sm">
                 Recuperar contraseña
               </Button>

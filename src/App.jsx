@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { RecuperarContraseña } from "./pages/RecuperarContraseña";
 import { Footer } from "./components/Footer/Footer";
 import { DataContext } from "./context/DataContext";
-
+import { Header } from "./components/Header/Header";
 import { Ayuda } from "./pages/Ayuda";
 import { Carrito } from "./pages/Carrito";
 import { Contacto } from "./pages/Contacto";
@@ -16,14 +16,15 @@ function App() {
     <>
     <DataContext>
       <BrowserRouter>
+        <Header/>
         <Routes>
           <Route path="/" element={<Login/>}/>
-          <Route path="/pages/RecuperarContraseña" element={<RecuperarContraseña/>}/>
-          <Route path="/pages/Carrito" element={<Carrito/>}></Route>
-          <Route path="/pages/Ayuda" element={<Ayuda/>}></Route>
-          <Route path="/pages/Destacados" element={<Destacados/>}></Route>
-          <Route path="/pages/Contacto" element={<Contacto/>}></Route>
-          <Route path="/pages/Favoritos" element={<Favoritos/>}></Route>
+          <Route path="/RecuperarContraseña" element={<RecuperarContraseña/>}/>
+          <Route path="/Carrito" element={<Carrito/>}></Route>
+          <Route path="/Ayuda" element={<Ayuda/>}></Route>
+          <Route path="/Destacados" element={<Destacados/>}></Route>
+          <Route path="/Contacto" element={<Contacto/>}></Route>
+          <Route path="/Favoritos" element={<Favoritos/>}></Route>
         </Routes>
         <Footer/>
       </BrowserRouter>
