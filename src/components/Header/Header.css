@@ -4,11 +4,12 @@
 .headerImg {
     width: 12rem;
     height: 10rem;
+    border-radius: 999px;
 }
 img {
     height: 3rem;
     width: 3rem;
 }
-input {
+.inputHeader {
     padding: 1rem;
 }

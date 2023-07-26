@@ -13,6 +13,7 @@ import NavComp from "./components/Nav/NavComp";
 import Productos from "./components/Productos/Productos";
 import Carrousel from "./components/Carrousel/Carrousel";
 import { Inicio } from "./pages/Inicio";
+import { Administrar } from "./pages/Administrar/Administrar";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
           <Route path="/Destacados" element={<Destacados/>}></Route>
           <Route path="/Contacto" element={<Contacto/>}></Route>
           <Route path="/Favoritos" element={<Favoritos/>}></Route>
+          <Route path="/Administrar" element={<Administrar/>}></Route>
         </Routes>
         <Footer/>
       </BrowserRouter>
