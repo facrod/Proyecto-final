@@ -29,8 +29,15 @@
 #basic-navbar-nav {
   display: grid;
   place-content: center;
+<<<<<<< HEAD
   
 }
 .admin {
   margin-left: 15px;
+=======
+}
+.adminLink {
+  margin: 10px;
+  font-weight: bold;
+>>>>>>> 898dd0ed5e1d20d4cc023620ed116456104435d7
 }

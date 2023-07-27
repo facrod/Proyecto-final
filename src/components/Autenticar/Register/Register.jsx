@@ -49,7 +49,8 @@ function handleRePassword(e) {
 
 
 const handeClick = (e) => {
-  if (usuarioNuevo.nombre === "" || usuarioNuevo.apellido === "" || usuarioNuevo.email === "" || usuarioNuevo.password === "" || usuarioNuevo.repassword === "") {
+  const { nombre, apellido, email, password, repassword } = usuarioNuevo;
+  if (nombre || apellido || email || password || repassword) {
     alert("rellena los campos")
   } else {
     e.preventDefault()

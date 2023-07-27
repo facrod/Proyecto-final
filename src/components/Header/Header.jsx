@@ -12,7 +12,7 @@ export const Header = () => {
                 <img src={logo} alt="" className='headerImg '/>
             </div>
             <div className='w-50 p-3 d-flex justify-content-center align-items-center'>
-                <input type="search" placeholder='Busca tu producto.' className='inputHeader w-100'/>
+                <input type="search" placeholder='Busca tu producto.' className='inputHeader'/>
             </div>
             <div className='w-25 text-center p-3 d-flex justify-content-center align-items-center'>
                 <a href="http://www.facebook.com" target="_blank"><img src={facebooklogo} alt="" /></a>
