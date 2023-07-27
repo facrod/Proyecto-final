@@ -29,5 +29,8 @@
 #basic-navbar-nav {
   display: grid;
   place-content: center;
-  
+}
+.adminLink {
+  margin: 10px;
+  font-weight: bold;
 }

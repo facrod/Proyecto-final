@@ -9,6 +9,7 @@ img {
     height: 3rem;
     width: 3rem;
 }
-input {
+.inputHeader {
     padding: 1rem;
+    width: 40vw;
 }

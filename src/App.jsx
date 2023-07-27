@@ -13,6 +13,7 @@ import NavComp from "./components/Nav/NavComp";
 import Productos from "./components/Productos/Productos";
 import Carrousel from "./components/Carrousel/Carrousel";
 import { Inicio } from "./pages/Inicio";
+import { Administracion } from "./pages/Administracion/Administracion";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         </NavComp>
         <Routes>
           <Route path="/" element={<Inicio/>}/>
+          <Route path="/Administracion" element={<Administracion/>}/>
           <Route path="/Productos" element={<Productos/>}/>
           <Route path="/Contacto" element={<Contacto/>}/>
           <Route path="/RecuperarContraseña" element={<RecuperarContraseña/>}/>

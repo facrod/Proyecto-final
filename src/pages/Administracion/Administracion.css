@@ -1,0 +1,19 @@
+.contenedorAdmin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.contenedorAdmin-inputs {
+    display: flex;
+    flex-direction: column;
+    width: 25vw;
+    margin: 5px;
+}
+.contenedorAdmin-inputs input {
+    margin: 10px 0 10px 0;
+}
+.contenedorAdmin-table {
+    width: 70vw;
+    margin: 5px;
+}
