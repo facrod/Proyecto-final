@@ -1,3 +1,4 @@
+
 async function getProducts() {
     const response = await fetch("http://localhost:3000/productos")
     return await response.json()
@@ -10,7 +11,7 @@ async function addProducts ({producto, descripcion, categoria, precio, stock}) {
         precio,
         stock,
     }
-    const repsonse = await fetch("http://localhost:3000/productos", {
+    const response = await fetch("http://localhost:3000/productos", {
         method: "POST",
         headers : {
             "Content-type" : "application/json"
@@ -18,7 +19,19 @@ async function addProducts ({producto, descripcion, categoria, precio, stock}) {
         body: JSON.stringify(body)
     })
 
-    return await repsonse.json()
+    return await response.json()
 }
 
-export {getProducts, addProducts} 
+async function getProductById(id) {
+    const response = await fetch(`http://localhost:3000/productos/${id}`)
+    return await response.json()
+}
+
+async function deleteProducts (id){
+    const reponse = await fetch(`http://localhost:3000/productos/${id}`, {
+        method: "DELETE",
+    })
+    return await reponse.json()
+}
+
+export {getProducts, addProducts, getProductById, deleteProducts} 
