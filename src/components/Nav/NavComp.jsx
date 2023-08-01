@@ -26,7 +26,7 @@ function NavComp() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="Nav">
-            <NavLink className="nav-link" to="/Productos" style={ConditionalCSS}>Productos</NavLink>
+            <NavLink className="nav-link" to="/Productos" style={ConditionalCSS}>Product</NavLink>
             <NavLink className="nav-link" to="/Contacto" style={ConditionalCSS}>Contacto</NavLink>
             <NavDropdown title="Categorias" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Salud, higiene y estetica</NavDropdown.Item>
