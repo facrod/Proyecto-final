@@ -14,7 +14,7 @@ import Productos from "./components/Productos/Productos";
 import Carrousel from "./components/Carrousel/Carrousel";
 import { Inicio } from "./pages/Inicio";
 import { Administracion } from "./pages/Administracion/Administracion";
-import { ProductoSeleccionado } from "./pages/ProductoSeleccionado";
+import { ProductoSeleccionado } from "./pages/ProductoSeleccionado/ProductoSeleccionado";
 
 function App() {
   return (

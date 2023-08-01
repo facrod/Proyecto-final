@@ -4,9 +4,12 @@ import "./Productos.css"
 import {getProductById, getProducts} from '../../services/productosServices';
 import { useContext, useEffect, useState } from 'react';
 import { NavLink } from "react-router-dom";
+import { DataProvider } from '../../context/DataContext';
 
 
 export const Productos = () => {
+
+const contexto = useContext(DataProvider)
 
 function handleDetailProduct(e) {
   const Id = e.target.id
@@ -15,6 +18,8 @@ function handleDetailProduct(e) {
       console.log(res)
     }).
   catch(err => console.log(err))
+  contexto.setProductId(Id)
+
 }
 
 const [productos, setProductos] = useState([])
