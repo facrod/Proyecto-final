@@ -22,7 +22,7 @@ p{
     transition: 2s ease;
 }
 .registrate:hover{
-    color: rgb(89, 1, 128);
+    color: rgb(89, 1, 127);
     opacity: 100%;
     transform: scale(1.01,1.01);
 }
