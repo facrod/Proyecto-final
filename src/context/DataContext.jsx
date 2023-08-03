@@ -5,11 +5,14 @@ export const DataProvider = createContext()
 export const DataContext = ({children}) =>{
     const [isLogged, setIsLogged] = useState(false)
     const [productId, setProductId] = useState("")
+    const [token, setToken] = useState("")
     const initialValues = {
         isLogged,
         setIsLogged,
         productId,
-        setProductId
+        setProductId,
+        token,
+        setToken
     }
 
     return <DataProvider.Provider value={initialValues}>

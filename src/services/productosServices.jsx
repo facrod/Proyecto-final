@@ -34,4 +34,21 @@ async function deleteProducts (id){
     return await reponse.json()
 }
 
-export {getProducts, addProducts, getProductById, deleteProducts} 
+async function uploadPictureProduct ({id, token, file}) {
+    const formData = new FormData()
+    formData.append("file", file)
+
+    const response = await fetch (`http://localhost:3000/productos/foto/${id}`, {
+        method: "PUT",
+        headers: {
+            authorization: `Bearer ${token}`
+        },
+        body: formData
+    })
+
+    return await response.json()
+
+
+}
+
+export {getProducts, addProducts, getProductById, deleteProducts, uploadPictureProduct} 

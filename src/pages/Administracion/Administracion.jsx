@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import Table from 'react-bootstrap/Table';
 import "./Administracion.css"
-import { deleteProducts, getProducts } from '../../services/productosServices';
+import { deleteProducts, getProducts, uploadPictureProduct } from '../../services/productosServices';
 import { addProducts } from '../../services/productosServices';
-
+import { CustomDropZone } from '../../components/Dropzone/CustomDropZone';
 export const Administracion = () => {
 
 const [productoNuevo, setProductoNuevo] = useState({
@@ -67,7 +67,6 @@ function handleDeleteProduct (e) {
       console.log(res)
     }).
     catch(err => console.log(err))
-  window.location.reload()
 }
 
 const [productos, setProductos] = useState([])
@@ -84,7 +83,7 @@ useEffect(()=> {
 
   return (
     <div className='contenedorAdmin'>
-        <div className='contenedorAdmin-inputs'>
+        <div className='contenedorAdmin-inputs'>  
             <input type="text" placeholder='producto' onChange={handleProducto}/>
             <input type="number" placeholder='precio' onChange={handlePrecio}/>
             <input type="number" placeholder='stock' onChange={handleStock}/>

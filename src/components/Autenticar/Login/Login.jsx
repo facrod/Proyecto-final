@@ -12,6 +12,7 @@ import { DataProvider } from '../../../context/DataContext';
 
 export const Login = () => {
   const contexto = useContext(DataProvider)
+  
   const [show, setShow] = useState(false);
   const [register, setRegister] = useState(false)
   const handleShow = () => setShow(true);
@@ -45,6 +46,7 @@ export const Login = () => {
     login(usuario)
       .then(res =>{
         setLoginRes(res)
+        contexto.setToken(res.data)
         console.log(res)
       })
       .catch(err => console.log(err)) 
@@ -56,6 +58,7 @@ export const Login = () => {
     contexto.setIsLogged(true)
     setShow(false)
   }
+  console.log(contexto)
 
 
   function changeRegister () {
