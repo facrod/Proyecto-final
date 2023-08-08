@@ -3,6 +3,7 @@ import Table from 'react-bootstrap/Table';
 import "./Administracion.css"
 import { deleteProducts, getProducts } from '../../services/productosServices';
 import { addProducts } from '../../services/productosServices';
+import { CustomDropZone } from '../../components/Dropzone/CustomDropZone';
 
 export const Administracion = () => {
 
@@ -84,6 +85,9 @@ useEffect(()=> {
 
   return (
     <div className='contenedorAdmin'>
+        <CustomDropZone>
+          <h1>dropea</h1>
+        </CustomDropZone>
         <div className='contenedorAdmin-inputs'>
             <input type="text" placeholder='producto' onChange={handleProducto}/>
             <input type="number" placeholder='precio' onChange={handlePrecio}/>

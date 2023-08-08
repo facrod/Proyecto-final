@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import logo from "../Footer/imgFooter/fuzLogo.jpg";
 import twitterlogo from "../Footer/imgFooter/twitterlogo.png";
 import facebooklogo from "../Footer/imgFooter/facebooklogo.png";
@@ -25,7 +25,7 @@ export const Header = () => {
         const prodFilter = productos.filter((product) =>
         product.producto.includes(prod)
     );
-        console.log(prodFilter)
+        localStorage.setItem("productos filtrados", JSON.stringify(prodFilter))
     }
 
     return (
