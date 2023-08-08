@@ -4,6 +4,7 @@
 .headerImg {
     width: 12rem;
     height: 10rem;
+    border-radius: 999px;
 }
 img {
     height: 3rem;

@@ -18,7 +18,7 @@ function NavComp({children}) {
   return (
     <Navbar expand="md" className="NavBar">
       <Container className='Container'>
-      <NavLink className="nav-link" to="/" style={ConditionalCSS}>Inicio</NavLink>
+        <NavLink className="nav-link" to="/" style={ConditionalCSS}>Inicio</NavLink>
         <Navbar.Toggle aria-controls="basic-navbar-nav " />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav >      

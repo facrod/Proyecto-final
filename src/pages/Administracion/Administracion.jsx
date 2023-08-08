@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import Table from 'react-bootstrap/Table';
 import "./Administracion.css"
-import { getProducts } from '../../services/productosServices';
+import { deleteProducts, getProducts } from '../../services/productosServices';
 import { addProducts } from '../../services/productosServices';
+
 export const Administracion = () => {
 
 const [productoNuevo, setProductoNuevo] = useState({
@@ -59,8 +60,14 @@ function sendProduct() {
   }
   }
 
-function handleDeleteProduct () {
-  alert("producto eliminado")
+function handleDeleteProduct (e) {
+  const Id = e.target.id
+  deleteProducts(Id).
+    then(res => {
+      console.log(res)
+    }).
+    catch(err => console.log(err))
+  window.location.reload()
 }
 
 const [productos, setProductos] = useState([])
@@ -113,8 +120,6 @@ useEffect(()=> {
                 </tbody>
             </Table>
         </div>
-
-
     </div>
   )
 }
