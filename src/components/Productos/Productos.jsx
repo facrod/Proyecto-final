@@ -6,16 +6,16 @@ import { useContext, useEffect, useState } from 'react';
 import { NavLink } from "react-router-dom";
 import { DataProvider } from '../../context/DataContext';
 
-
 export const Productos = () => {
 
-  useEffect(()=>{
-    const prodFilter = JSON.parse(localStorage.getItem("productos filtrados"))
-    setProductos(prodFilter)    
-    
-  }, [prodFilter])
-
 const contexto = useContext(DataProvider)
+let prodString = contexto.stringProd
+
+if (prodString !== "" ) {
+  useEffect(()=>{
+    setProductos(JSON.parse(localStorage.getItem("productos filtrados")) )
+  },[prodString]) 
+}
 
 function handleDetailProduct(e) {
   const Id = e.target.id
@@ -38,7 +38,6 @@ useEffect(()=> {
     .catch(err => console.log(err))  
 
 },[])
-
 
   if (productos.length > 0) {
     return (

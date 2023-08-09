@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import logo from "../Footer/imgFooter/fuzLogo.jpg";
 import twitterlogo from "../Footer/imgFooter/twitterlogo.png";
 import facebooklogo from "../Footer/imgFooter/facebooklogo.png";
 import "./Header.css"
 import { getProducts } from '../../services/productosServices';
+import { DataProvider } from '../../context/DataContext';
 
 export const Header = () => {
-
+    const contexto = useContext(DataProvider)
     const [productos, setProductos] = useState([])
 
     useEffect(() => {
@@ -26,6 +27,8 @@ export const Header = () => {
         product.producto.includes(prod)
     );
         localStorage.setItem("productos filtrados", JSON.stringify(prodFilter))
+        contexto.setStringProd(prodFilter)
+        console.log(contexto)
     }
 
     return (
