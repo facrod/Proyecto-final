@@ -4,6 +4,7 @@ import "./Administracion.css"
 import { deleteProducts, getProducts, uploadPictureProduct } from '../../services/productosServices';
 import { addProducts } from '../../services/productosServices';
 import { CustomDropZone } from '../../components/Dropzone/CustomDropZone';
+
 export const Administracion = () => {
 
 const [productoNuevo, setProductoNuevo] = useState({
@@ -83,7 +84,10 @@ useEffect(()=> {
 
   return (
     <div className='contenedorAdmin'>
-        <div className='contenedorAdmin-inputs'>  
+        <CustomDropZone>
+          <h1>dropea</h1>
+        </CustomDropZone>
+        <div className='contenedorAdmin-inputs'>
             <input type="text" placeholder='producto' onChange={handleProducto}/>
             <input type="number" placeholder='precio' onChange={handlePrecio}/>
             <input type="number" placeholder='stock' onChange={handleStock}/>

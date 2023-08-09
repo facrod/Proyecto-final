@@ -9,6 +9,12 @@ import { DataProvider } from '../../context/DataContext';
 
 export const Productos = () => {
 
+  useEffect(()=>{
+    const prodFilter = JSON.parse(localStorage.getItem("productos filtrados"))
+    setProductos(prodFilter)    
+    
+  }, [prodFilter])
+
 const contexto = useContext(DataProvider)
 
 function handleDetailProduct(e) {
@@ -32,6 +38,7 @@ useEffect(()=> {
     .catch(err => console.log(err))  
 
 },[])
+
 
   if (productos.length > 0) {
     return (
