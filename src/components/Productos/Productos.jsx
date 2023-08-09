@@ -9,9 +9,9 @@ import { DataProvider } from '../../context/DataContext';
 
 export const Productos = () => {
 
-  const prodFilter = JSON.parse(localStorage.getItem("productos filtrados"))
   useEffect(()=>{
-      setProductos(prodFilter)    
+    const prodFilter = JSON.parse(localStorage.getItem("productos filtrados"))
+    setProductos(prodFilter)    
     
   }, [prodFilter])
 
