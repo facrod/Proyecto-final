@@ -9,13 +9,7 @@ import { DataProvider } from '../../context/DataContext';
 export const Productos = () => {
 
 const contexto = useContext(DataProvider)
-let prodString = contexto.stringProd
 
-if (prodString !== "") {
-  useEffect(()=>{
-    setProductos(JSON.parse(localStorage.getItem("productos filtrados")) )
-  },[prodString]) 
-}
 
 function handleDetailProduct(e) {
   const Id = e.target.id
@@ -29,15 +23,24 @@ function handleDetailProduct(e) {
 }
 
 const [productos, setProductos] = useState([])
-useEffect(()=> {
-  getProducts().
-    then()
-    .then(res =>{
-      setProductos(res.data)
-    })
-    .catch(err => console.log(err))  
+let prodString = contexto.stringProd
 
-},[])
+
+if (prodString !== "") {
+  useEffect(()=>{
+    setProductos(JSON.parse(localStorage.getItem("productos filtrados")) )
+  },[prodString]) 
+} else {
+  useEffect(()=> {
+    getProducts().
+      then()
+      .then(res =>{
+        setProductos(res.data)
+      })
+      .catch(err => console.log(err))  
+  
+  },[])
+}
 
   if (productos.length > 0) {
     return (
