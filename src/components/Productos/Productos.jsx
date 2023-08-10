@@ -11,7 +11,7 @@ export const Productos = () => {
 const contexto = useContext(DataProvider)
 let prodString = contexto.stringProd
 
-if (prodString !== "" ) {
+if (prodString !== "") {
   useEffect(()=>{
     setProductos(JSON.parse(localStorage.getItem("productos filtrados")) )
   },[prodString]) 
